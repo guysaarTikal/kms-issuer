@@ -85,7 +85,7 @@ resource "null_resource" "install_kms_controller_crd" {
 resource "helm_release" "kms_controller" {
   depends_on  = [ null_resource.install_kms_controller_crd ]
   name        = "kms-issuer"
-  chart       = "./charts/kms-controller"
+  chart       = "./chart/kms-controller"
   namespace   = "kms-issuer-system"
   cleanup_on_fail = true
 
